@@ -1,0 +1,32 @@
+public class MatrixAddition {
+    public static void main(String[] args) {
+        // Define two matrices
+        int[][] matrix1 = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+        int[][] matrix2 = { { 9, 8, 7 }, { 6, 5, 4 }, { 3, 2, 1 } };
+
+        // Check if the matrices have compatible dimensions
+        if (matrix1.length != matrix2.length || matrix1[0].length != matrix2[0].length) {
+            System.out.println("Matrix dimensions are not compatible for addition.");
+            return;
+        }
+
+        // Create a new matrix to store the sum
+        int[][] sumMatrix = new int[matrix1.length][matrix1[0].length];
+
+        // Perform matrix addition
+        for (int i = 0; i < matrix1.length; i++) {
+            for (int j = 0; j < matrix1[0].length; j++) {
+                sumMatrix[i][j] = matrix1[i][j] + matrix2[i][j];
+            }
+        }
+
+        // Display the sum matrix
+        System.out.println("Sum Matrix:");
+        for (int i = 0; i < sumMatrix.length; i++) {
+            for (int j = 0; j < sumMatrix[0].length; j++) {
+                System.out.print(sumMatrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
